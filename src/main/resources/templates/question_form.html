@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="content" class="p-5">
+    <h2 class="mb-3">질문 등록 페이지</h2>
+    <form th:acrtion="@{/question/create}" method="post">
+        <div class="mb-3">
+            <label for="subject" class="form-label">제목</label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <textarea class="form-control" id="content" name="content" rows="10" placeholder="내용을 입력하세요"></textarea>
+        </div>
+        <input type="submit" value="등록하기" class="btn btn-primary">
+    </form>
+</div>
+</body>
+</html>
