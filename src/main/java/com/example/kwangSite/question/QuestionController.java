@@ -21,7 +21,7 @@ public class QuestionController {
     @GetMapping("/list")
     public String list(Model model) {
         List<Question> questionList = this.questionRepository.findAll();
-
+        model.addAttribute("questionList", questionList);
         return "question_list";
     }
 

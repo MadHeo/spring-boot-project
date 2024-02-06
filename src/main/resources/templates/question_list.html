@@ -5,14 +5,25 @@
 	<title>Title</title>
 </head>
 <div layout:fragment="content">
-	<table>
-
+	<table class="table">
+		<thead class="table-light">
 		<tr>
-			<th>
-				제목
-			</th>
+			<th>번호</th>
+			<th>제목</th>
+			<th>날짜</th>
 		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="el: ${questionList}">
+			<td th:text="${el.id}"></td>
+			<td>[[${el.subject}]]</td>
+			<td>[[${el.createDate}]]</td>
+		</tr>
+
+		</tbody>
 	</table>
+	<div>
 	<a th:href="@{/question/create}" class="btn btn-primary">질문 등록하기</a>
+	</div>
 </div>
 </html>
